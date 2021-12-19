@@ -36,7 +36,7 @@ class CrieteViewClient(CreateView):
         return super().form_valid(form)  
     
     
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('list_client')
 
 
 class UpadateViewClient(UpdateView):
