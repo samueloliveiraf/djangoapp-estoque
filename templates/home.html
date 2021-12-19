@@ -1,0 +1,43 @@
+{% extends 'index.html' %} {% block title %} Início {% endblock %} {% block main %}
+<div class="container">
+
+    <div class="row area">
+        <div class="col s6 text-center">
+
+            <div class="card">
+                <i class="medium material-icons">account_box</i>
+                <p style="font-size: 18px;">Clientes</p>
+                <div class="actions">
+                    <a class="space" href="{% url 'create_client' %}">
+                        <i class="small material-icons">add_circle</i>
+                    </a>
+
+                    <a href="{% url 'list_client' %}">
+                        <i class="small material-icons">group</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s6 text-center">
+
+            <div class="card">
+                <i class="medium material-icons">web</i>
+                <p style="font-size: 18px;">Produtos</p>
+                <div class="actions">
+                    <a class="space" href="{% url 'create_product' %}">
+                        <i class="small material-icons">add_circle</i>
+                    </a>
+
+                    <a href="{% url 'list_products' %}">
+                        <i class="small material-icons">storage</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
