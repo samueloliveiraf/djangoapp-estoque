@@ -73,7 +73,6 @@ def sale_product(request, id_product):
 
     quantity = request.POST.get("quantity")
     payment = request.POST.get("payment")
-    cpf_client = request.POST.get("cpf_client")
     name_client = request.POST.get("name_client")
 
    
@@ -82,8 +81,7 @@ def sale_product(request, id_product):
             quantity=quantity,
             product=product,
             payment=payment,
-            cpf_client=cpf_client,
-            name_cliente=name_client,
+            name_client=name_client,
             user=request.user,
         )
      

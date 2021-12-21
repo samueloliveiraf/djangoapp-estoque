@@ -35,8 +35,8 @@ class Sale(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=False,null=False)
     time = models.DateTimeField(auto_now=True)
     payment = models.CharField(max_length=100)
-    quantity = models.PositiveIntegerField()
-    name_cliente = models.CharField(max_length=150, verbose_name='Nome Cliente')
+    quantity = models.IntegerField()
+    name_client = models.CharField(max_length=150, verbose_name='Nome Cliente')
 
 
     class Meta:
