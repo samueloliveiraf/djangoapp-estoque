@@ -36,6 +36,7 @@ PROJECT_APPS = [
     'clients.apps.ClientsConfig',
     'users.apps.UsersConfig',
     'products.apps.ProductsConfig',
+    'company.apps.CompanyConfig'
 ]
 
 INSTALLED_APPS = PROJECT_APPS + THIRD_APPS + DEFAULT_APPS

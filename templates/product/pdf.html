@@ -82,7 +82,9 @@
         <thead>
             <tr>
                 <th class="ttu" colspan="3">
-                    <b>Cupom nao fiscal</b>
+                    {% for company in companys %}
+                    <img src="{{ company.image }}" alt="">
+                    <b>{{ company.name }}</b> {% endfor %}
                 </th>
             </tr>
         </thead>
@@ -103,6 +105,10 @@
                 <td colspan="3">
                     <b>Totais</b>
                 </td>
+            </tr>
+            <tr class="ttu">
+                <td colspan="2">Nome do Cliente:</td>
+                <td align="right">{{ sale.name_client }}</td>
             </tr>
             <tr class="ttu">
                 <td colspan="2">Forma de pagamento:</td>
@@ -136,7 +142,7 @@
             </tr>
             <tr class="sup">
                 <td colspan="3" align="center">
-                    https://samueloliveiraf.github.io/meu-portifolio/
+                    Suporte contato <br> https://samueloliveiraf.github.io/site-devsamuel/
                 </td>
             </tr>
         </tfoot>

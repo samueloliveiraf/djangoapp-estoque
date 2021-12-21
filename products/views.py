@@ -6,6 +6,7 @@ from django.views.generic import (
 )
 from django.urls import reverse_lazy
 from .models import Product, Sale
+from company.models import Company
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 import datetime
@@ -75,8 +76,10 @@ def sale_product(request, id_product):
     payment = request.POST.get("payment")
     name_client = request.POST.get("name_client")
 
-   
-    if product.quantity > 0:
+    qtd = int(quantity)
+
+    if qtd <= product.quantity and product.quantity > 0:
+        
         sales = Sale(
             quantity=quantity,
             product=product,
@@ -84,11 +87,20 @@ def sale_product(request, id_product):
             name_client=name_client,
             user=request.user,
         )
-     
+        
         sales.save()
 
         product.quantity = product.quantity - int(quantity)
         product.save()
+
+    else:
+        message = 'Quantidade do produto é inválida'
+
+        context = {
+            'message': message
+        }
+
+        return render(request, 'product/erro_venda.html', context)
 
     context = {
         'sales': sales,

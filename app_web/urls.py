@@ -6,6 +6,7 @@ from core.views import home
 from clients import urls as clients_urls
 from users import urls as users_urls
 from products import urls as products_urls
+from company import urls as company_urls
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -25,6 +26,7 @@ urlpatterns = [
     path('user/', include(users_urls)),
     path('client/', include(clients_urls)),
     path('product/', include(products_urls)),
+    path('company/', include(company_urls)),
     path('', home, name='home')
 ]
 

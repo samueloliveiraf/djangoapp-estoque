@@ -7,6 +7,7 @@ from xhtml2pdf import pisa
 from django.views.generic import View
 
 from .models import Sale
+from company.models import Company
 from datetime import datetime
 
 
@@ -27,11 +28,19 @@ class GeneratePDF(View):
             user=request.user,
             id=id_sale,
         )
+
+        companys = Company.objects.filter(
+            user=request.user
+        )
     
         myDate = datetime.now()
         formatedDate = myDate.strftime("%Y-%m-%d %H:%M:%S")
 
-        context = { 'sales': sales, 'myDate': formatedDate}
+        context = { 
+            'sales': sales, 
+            'companys': companys,
+            'myDate': formatedDate
+        }
 
         html = template.render(context)
         pdf = render_to_pdf('product/pdf.html', context)
