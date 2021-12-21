@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cpf_field.models import CPFField
 
 
 class Product(models.Model):
@@ -35,14 +36,18 @@ class Sale(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=False,null=False)
     time = models.DateTimeField(auto_now=True)
     payment = models.CharField(max_length=100)
-    quantity = models.IntegerField()
+    quantity = models.PositiveIntegerField()
+    name_cliente = models.CharField(max_length=150, verbose_name='Nome Cliente')
+
 
     class Meta:
         ordering = ['-id']
 
+
     def total_sale(self):
         total = self.product.price * self.quantity
         return total
+
 
     def __str__(self):
 	    return '{} {} {} {} {}'.format(

@@ -62,13 +62,17 @@ label {
     margin-top: 5px;
 }
 
+.pagination>.active {
+    background-color: #F2F2F2 !important;
+}
+
 .pagination>.active>a,
 .pagination>.active>span,
 .pagination>.active>a:hover,
 .pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
-    background-color: #f2f2f2;
+    background-color: transparent;
     border-color: white;
     color: white;
     cursor: pointer;
@@ -78,4 +82,8 @@ label {
 .pagination {
     display: flex;
     justify-content: center;
+}
+
+.size-icon {
+    font-size: 42px;
 }

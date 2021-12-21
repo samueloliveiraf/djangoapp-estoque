@@ -2,41 +2,33 @@
 <div class="container">
 
     <div class="row area">
-        <div class="col s6 text-center">
+
+        <div class="col s12 text-center">
 
             <div class="card">
-                <i class="medium material-icons">account_box</i>
-                <p style="font-size: 18px;">Clientes</p>
-                <div class="actions">
-                    <a class="space" href="{% url 'create_client' %}">
-                        <i class="small material-icons">add_circle</i>
-                    </a>
-
-                    <a href="{% url 'list_client' %}">
-                        <i class="small material-icons">group</i>
-                    </a>
+                <div class="col s12">
+                    <h6 style="font-weight: 600;">Produtos</h6>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <h6>Ver <br> Produtos</h6>
+                        <a href="{% url 'list_products' %}">
+                            <i class="size-icon material-icons">storage</i>
+                        </a>
+                    </div>
+                    <div class="col s6">
+                        <h6>Cadastrar <br> Produtos</h6>
+                        <a href="{% url 'create_product' %}">
+                            <i class="size-icon material-icons">add_circle</i>
+                        </a>
+                    </div>
                 </div>
             </div>
+
         </div>
-
-        <div class="col s6 text-center">
-
-            <div class="card">
-                <i class="medium material-icons">web</i>
-                <p style="font-size: 18px;">Produtos</p>
-                <div class="actions">
-                    <a class="space" href="{% url 'create_product' %}">
-                        <i class="small material-icons">add_circle</i>
-                    </a>
-
-                    <a href="{% url 'list_products' %}">
-                        <i class="small material-icons">storage</i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
     </div>
+
+</div>
 
 </div>
 

@@ -73,14 +73,20 @@ def sale_product(request, id_product):
 
     quantity = request.POST.get("quantity")
     payment = request.POST.get("payment")
+    cpf_client = request.POST.get("cpf_client")
+    name_client = request.POST.get("name_client")
 
+   
     if product.quantity > 0:
         sales = Sale(
             quantity=quantity,
             product=product,
             payment=payment,
+            cpf_client=cpf_client,
+            name_cliente=name_client,
             user=request.user,
         )
+     
         sales.save()
 
         product.quantity = product.quantity - int(quantity)
@@ -89,7 +95,7 @@ def sale_product(request, id_product):
     context = {
         'sales': sales,
         'quantity': quantity,
-        'product': product,
+        'product': product
     }
 
     return render(request, template_name, context)
